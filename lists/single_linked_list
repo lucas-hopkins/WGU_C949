@@ -1,0 +1,57 @@
+
+
+
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.next = Node
+
+  def __repr__(self):
+    return self.data
+
+
+class Single_Linked_List():
+  def __init__(self):
+    self.head = None
+    self.tail = None
+
+  def __repr__(self):
+    node = self.head
+    nodes = []
+    while node is not None:
+      nodes.append(node.data)
+      node = node.next
+    node.append("None")
+    return " -> ".join(nodes)
+  
+  def first(self, node):
+    node = Node(node)
+    node.next = self.head
+    self.head = node
+    self.tail = node
+
+  def append(self, data):
+    node = Node(data)
+    if self.head == None:
+      self.head = node
+      return
+    
+    for current_node in self:
+      pass
+    current_node.next = node
+    self.tail = node
+
+
+llist = Single_Linked_List()
+
+node_1 = "A"
+node_2 = "B"
+node_3 = "C"
+node_4 = "D"
+
+llist.first(node_1)
+llist.append(node_2)
+llist.append(node_3)
+llist.append(node_4)
+
+llist
